@@ -68,7 +68,7 @@
           </h1>
           <p data-aos="fade-up" data-aos-delay="100">Ayo Bantu Laporkan kerusakan fasilitas yang kamu lihat!<br></p>
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="#about" class="btn-get-started">Form Pengaduan</a>
+            <a href="#contact" class="btn-get-started">Form Pengaduan</a>
           
           </div>
           <img src="assets/img/hero-services-img.webp" class="img-fluid hero-img" alt="" data-aos="zoom-out" data-aos-delay="300">
@@ -138,11 +138,11 @@
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" id="warna" placeholder="Nama Anda" required="">
+                  <input type="text" name="nama" class="form-control" id="warna" placeholder="Nama Anda" required="">
                 </div>
 
                 <div class="col-md-6 ">
-                  <select name="email" id="warna-pilihan" class="form-select" required="">
+                  <select name="fasilitas" id="warna-pilihan" class="form-select" required="">
                     <option selected>Pilih Fasilitas</option>
                     <option value="">Terminal Bus</option>
                     <option value="">Halte</option>
@@ -154,12 +154,21 @@
 
                 </div>
 
-                <div class="col-md-12">
-                  <input type="text" class="form-control" id="warna" name="subject" placeholder="Barang yang rusak" required="">
+                <div class="col-md-6">
+                  <input type="text" class="form-control" id="warna" name="barang" placeholder="Barang yang rusak" required="">
                 </div>
-
+                <div class="col-md-6">
+                  <input type="text" class="form-control" id="warna" name="alamat" placeholder="Alamat Fasilitas Rusak" required="">
+                </div>
                 <div class="col-md-12">
-                  <textarea class="form-control" id="warna" name="message" rows="6" placeholder="Alasan anda melapor" required=""></textarea>
+                  <input class="form-control" type="file" id="formFileMultiple" style="display: none;" multiple>
+                  <button id="btn-upload">
+                    <label for="formFileMultiple" class="form-label" id="label-upload">Klik untuk upload Foto</label>
+                  </button>
+                  
+                </div>
+                <div class="col-md-12">
+                  <textarea class="form-control" id="warna" name="keterangan" rows="6" placeholder="Keterangan Kerusakan" required=""></textarea>
                 </div>
 
                 <div class="col-md-12 text-center">

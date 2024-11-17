@@ -114,6 +114,18 @@ h6 {
   font-family: var(--heading-font);
 }
 
+#label-upload {
+  color: #fff;
+}
+
+#btn-upload{
+  color: var(--contrast-color);
+  background: var(--accent-color);
+  border: 0;
+  padding: 10px 30px;
+  transition: 0.4s;
+  border-radius: 50px;
+}
 /* PHP Email Form Messages
 ------------------------------*/
 .php-email-form .error-message {
