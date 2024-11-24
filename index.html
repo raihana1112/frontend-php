@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Index - QuickStart Bootstrap Template</title>
+  <title>Facility Care</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
 
@@ -141,35 +141,66 @@
                   <input type="text" name="nama" class="form-control" id="warna" placeholder="Nama Anda" required="">
                 </div>
 
-                <div class="col-md-6 ">
-                  <select name="fasilitas" id="warna-pilihan" class="form-select" required="">
-                    <option selected>Pilih Fasilitas</option>
-                    <option value="">Terminal Bus</option>
-                    <option value="">Halte</option>
-                    <option value="">Stasiun Kereta Api</option>
-                    <option value="">Pelabuhan</option>
-                    <option value="">Bandara</option>
-                    <option value="">Rambu Lalu Lintas</option>
+                <div class="col-md-6">
+                  <select name="jenis" id="warna-pilihan" class="form-select" required="">
+                    <option selected>Pilihan Jenis Fasilitas</option>
+                    <option value="Pelabuhan">Pelabuhan</option>
+                    <option value="Terminal">Terminal Tipe B</option>
+                    <option value="Trans Koetaradja">Trans Koetaradja</option>
+
                   </select>
 
                 </div>
 
-                <div class="col-md-6">
-                  <input type="text" class="form-control" id="warna" name="barang" placeholder="Barang yang rusak" required="">
+                <div class="col-md-12">
+                  <select name="tempat" id="warna-pilihan" class="form-select">
+                    <optgroup label="Pelabuhan">
+                      <option selected>Pilihan Tempat</option>
+                      <option value="Ulee Lheue">Ulee Lheue</option>
+                      <option value="Balohan">Balohan</option>
+                      <option value="Lamteng">Lamteng</option>
+                      <option value="Sinabang">Sinabang</option>
+                      <option value="Meulaboh">Meulaboh</option>
+                      <option value="Pulau Banyak">Pulau Banyak</option>
+                    </optgroup>
+                    <optgroup label="Terminal Tipe B">
+                      <option value="Sigli">Sigli</option>
+                      <option value="Pidie Jaya">Pidie Jaya</option>
+                      <option value="Bener Meriah">Bener Meriah</option>
+                      <option value="Calang">Calang</option>
+                      <option value="Aceh Tamiang">Aceh Tamiang</option>
+                      <option value="Singkil">Singkil</option>
+                      <option value="Aceh Barat Daya">Aceh Barat Daya</option>
+                      <option value="Aceh Selatan">Aceh Selatan</option>
+                    </optgroup>
+                    <optgroup label="Trans Koetaradja">
+                      <option value="Darussalam">Darussalam</option>
+                      <option value="Blang Bintang">Blang Bintang</option>
+                      <option value="Ulee Lheue">Ulee Lheue</option>
+                      <option value="Setui - Mata Ie">Setui - Mata ie</option>
+                      <option value="Lhong Raya - Mata Ie">Lhong Raya - Mata Ie</option>
+                      <option value="Ulee Kareng - Blang Bintang">Ulee Kareng - Blang Bintang</option>
+  
+                    </optgroup>
+                    
+
+                  </select>
                 </div>
-                <div class="col-md-6">
-                  <input type="text" class="form-control" id="warna" name="alamat" placeholder="Alamat Fasilitas Rusak" required="">
+              
+                <div class="col-md-12">
+                  <input type="text" name="nama" class="form-control" id="warna" placeholder="Tuliskan Fasilitas Yang Rusak" required="">
                 </div>
+
                 <div class="col-md-12">
                   <label class="form-label" id="label-upload">Upload Foto</label>
-                  <input class="form-control" type="file" id="formFileMultiple" multiple>
+                  <input class="form-control" type="file" id="formFileMultiple" multiple required>
                 </div>
                 <div class="col-md-12">
-                  <textarea class="form-control" id="warna" name="keterangan" rows="6" placeholder="Keterangan Kerusakan" required=""></textarea>
+                  <textarea class="form-control" id="warna" name="keterangan" rows="6" placeholder="Keterangan Kerusakan" required></textarea>
                 </div>
                 <div class="col-md-12">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                  <input class="form-check-input" type="checkbox" id="flexCheckChecked" required>
                   <label class="form-check-label" for="flexCheckChecked" id="label-check">
                     Centang jika data yang anda berikan sudah lengkap
                   </label>
