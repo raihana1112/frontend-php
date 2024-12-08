@@ -1,3 +1,6 @@
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -82,17 +85,16 @@
           <div class="row gy-4">
   
             <div class="col-lg-6 offset-lg-3">
-              <form action="pencarian.php" method="get" class="php-email-form" data-aos="fade-up" data-aos-delay="400">
+              <form action="pencarian.php" method="get" class="php-email-form-1" data-aos="fade-up" data-aos-delay="400">
                 <div class="row gy-4">
   
                   <div class="col-md-12">
-                    <input type="text" name="name" class="form-control" id="warna" placeholder="Ketik Nama Anda...." required="">
+                    <input type="text" name="cari" class="form-control" id="warna" placeholder="Ketik Nama Anda...." required="" value="<?= $_GET['cari'] ?? '' ?>">
                   </div>
   
-                  <div class="col-md-6 offset-md-5">
+                  <div class="col-md-12 text-center">
                     <button type="submit" id="btn-cari">Cek Status Laporan</button>
-                  </div>
-  
+                  </div>  
                 </div>
               </form>
             </div><!-- End Contact Form --> 
@@ -102,11 +104,12 @@
         </div>
 <br><br>
         <?php 
-include 'koneksi.php';
+        include 'koneksi.php';
 
 if(isset($_GET['cari'])){
 	$cari = $_GET['cari'];
 	echo "<b>Hasil pencarian : ".$cari."</b>";
+  // echo "<script>console.log('". $_GET['cari']."')</script>";
 }
 ?>
  
