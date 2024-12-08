@@ -34,16 +34,16 @@
   <header id="header" class="header d-flex align-items-center fixed-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <a href="#" class="logo d-flex align-items-center me-auto">
         <img src="assets/img/logo_dishub_aceh.png" alt="">
         <h1 class="sitename">Facility Care</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html#hero" class="active">Home</a></li>
-          <li><a href="index.html#featured-services">Service</a></li>
-          <li><a href="pencarian.html">Cek Status Pengaduan</a></li>
+          <li><a href="index.php#hero" class="active">Home</a></li>
+          <li><a href="index.php#featured-services">Service</a></li>
+          <li><a href="pencarian.php">Cek Status Pengaduan</a></li>
           
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -68,7 +68,7 @@
           </h1>
           <p data-aos="fade-up" data-aos-delay="100">Ayo Bantu Laporkan kerusakan fasilitas yang kamu lihat!<br></p>
           <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-            <a href="#contact" class="btn-get-started">Form Pengaduan</a>
+            <a href="#laporan" class="btn-get-started">Form Pengaduan</a>
           
           </div>
           <img src="assets/img/hero-services-img.webp" class="img-fluid hero-img" alt="" data-aos="zoom-out" data-aos-delay="300">
@@ -122,7 +122,7 @@
     </section><!-- /Featured Services Section -->
 
     <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <section id="laporan" class="contact section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
@@ -134,7 +134,7 @@
         <div class="row gy-4">
 
           <div class="col-lg-6 offset-lg-3" style="margin-top: 0px;">
-            <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="400">
+            <form action="add-laporan.php" method="post" enctype="multipart/form-data" class="php-email-form" data-aos="fade-up" data-aos-delay="400">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -142,7 +142,7 @@
                 </div>
 
                 <div class="col-md-6">
-                  <select name="jenis" id="warna-pilihan" class="form-select" required="">
+                  <select name="fasilitas" id="warna-pilihan" class="form-select" required="">
                     <option selected>Pilihan Jenis Fasilitas</option>
                     <option value="Pelabuhan">Pelabuhan</option>
                     <option value="Terminal">Terminal Tipe B</option>
@@ -153,7 +153,7 @@
                 </div>
 
                 <div class="col-md-12">
-                  <select name="tempat" id="warna-pilihan" class="form-select">
+                  <select name="pilihan_tempat" id="warna-pilihan" class="form-select">
                     <optgroup label="Pelabuhan">
                       <option selected>Pilihan Tempat</option>
                       <option value="Ulee Lheue">Ulee Lheue</option>
@@ -188,16 +188,16 @@
                 </div>
               
                 <div class="col-md-12">
-                  <input type="text" name="nama" class="form-control" id="warna" placeholder="Tuliskan Fasilitas Yang Rusak" required="">
+                  <input type="text" name="fasilitas_rusak" class="form-control" id="warna" placeholder="Tuliskan Fasilitas Yang Rusak" required="">
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" name="nama" class="form-control" id="warna" placeholder="Detail Alamat" required="">
+                  <input type="text" name="alamat" class="form-control" id="warna" placeholder="Detail Alamat" required="">
                 </div>
 
                 <div class="col-md-12">
                   <label class="form-label" id="label-upload">Upload Foto</label>
-                  <input class="form-control" type="file" id="formFileMultiple" multiple required>
+                  <input class="form-control" type="file" id="formFileMultiple" name="file" required>
                 </div>
                 <div class="col-md-12">
                   <textarea class="form-control" id="warna" name="keterangan" rows="6" placeholder="Keterangan Kerusakan" required></textarea>
@@ -212,9 +212,6 @@
               </div>
 
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading</div>
-                  <div class="error-message"></div>
-                  <div class="sent-message">Laporan anda akan kami periksa, Terimakasih sudah melaporkan!</div>
 
                   <button type="submit">Laporkan</button>
                 </div>

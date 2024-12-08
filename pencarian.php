@@ -33,16 +33,16 @@
   <header id="header" class="header d-flex align-items-center sticky-top">
     <div class="container-fluid container-xl position-relative d-flex align-items-center">
 
-      <a href="index.html" class="logo d-flex align-items-center me-auto">
+      <a href="index.php" class="logo d-flex align-items-center me-auto">
         <img src="assets/img/logo_dishub_aceh.png" alt="">
         <h1 class="sitename">Facility Care</h1>
       </a>
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="index.html#hero" class="active">Home</a></li>
-          <li><a href="index.html#featured-services">Service</a></li>
-          <li><a href="pencarian.html">Cek Status Pengaduan</a></li>
+          <li><a href="index.php#hero" class="active">Home</a></li>
+          <li><a href="index.php#featured-services">Service</a></li>
+          <li><a href="pencarian.php">Cek Status Pengaduan</a></li>
           
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -61,7 +61,7 @@
         <h1 class="mb-2 mb-lg-0">Status Pengaduan</h1>
         <nav class="breadcrumbs">
           <ol>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li class="current">Status Pengaduan</li>
           </ol>
         </nav>
@@ -82,7 +82,7 @@
           <div class="row gy-4">
   
             <div class="col-lg-6 offset-lg-3">
-              <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="400">
+              <form action="pencarian.php" method="get" class="php-email-form" data-aos="fade-up" data-aos-delay="400">
                 <div class="row gy-4">
   
                   <div class="col-md-12">
@@ -96,15 +96,50 @@
                 </div>
               </form>
             </div><!-- End Contact Form --> 
-  
+
           </div>
   
         </div>
+<br><br>
+        <?php 
+include 'koneksi.php';
+
+if(isset($_GET['cari'])){
+	$cari = $_GET['cari'];
+	echo "<b>Hasil pencarian : ".$cari."</b>";
+}
+?>
+ 
+<table class="table-primary table-striped table-hover">
+	<tr>
+		<th>No</th>
+		<th>Nama</th>
+    <th>fasilitas Rusak</th>
+    <th>Alamat</th>
+	</tr>
+	<?php 
+	if(isset($_GET['cari'])){
+		$cari = $_GET['cari'];
+		$data = mysqli_query($conn, "select nama, fasilitas_rusak,alamat from laporan where nama like '%".$cari."%'");				
+	}else{
+		$data = mysqli_query($conn,"select nama, fasilitas_rusak,alamat from laporan");		
+	}
+	$no = 1;
+	while($d = mysqli_fetch_array($data)){
+	?>
+	<tr>
+		<td><?php echo $no++; ?></td>
+		<td><?php echo $d['nama']; ?></td>
+    <td><?php echo $d['fasilitas_rusak']; ?></td>
+    <td><?php echo $d['alamat']; ?></td>
+	</tr>
+	<?php } ?>
 
 
     </section><!-- /Starter Section Section -->
 
   </main>
+  
   <footer id="footer" class="footer position-relative" class="footer-bg">
 
     <div class="container copyright text-center mt-4">
