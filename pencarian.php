@@ -100,9 +100,10 @@
             </div><!-- End Contact Form --> 
 
           </div>
-  
-        </div>
-<br><br>
+
+          <div class="row-gy-4">
+
+          
         <?php 
         include 'koneksi.php';
 
@@ -112,31 +113,48 @@ if(isset($_GET['cari'])){
   // echo "<script>console.log('". $_GET['cari']."')</script>";
 }
 ?>
- 
+
 <table class="table-primary table-striped table-hover">
 	<tr>
 		<th>No</th>
 		<th>Nama</th>
-    <th>fasilitas Rusak</th>
-    <th>Alamat</th>
+    <th>Tanggal Lapor</th>
+    <th>Fasilitas</th>
+    <th>Pilihan Tempat</th>
+    <th>Fasilitas yang Rusak</th>
+    <th>Alamat Tempat</th>
+    <th>Foto</th>
+    <th>Keterangan</th>
+    <th>Status Laporan</th>
 	</tr>
 	<?php 
 	if(isset($_GET['cari'])){
 		$cari = $_GET['cari'];
-		$data = mysqli_query($conn, "select nama, fasilitas_rusak,alamat from laporan where nama like '%".$cari."%'");				
+		$data = mysqli_query($conn, "select * from laporan where nama like '%".$cari."%'");				
 	}else{
-		$data = mysqli_query($conn,"select nama, fasilitas_rusak,alamat from laporan");		
+		$data = mysqli_query($conn,"select * from laporan");		
 	}
 	$no = 1;
 	while($d = mysqli_fetch_array($data)){
 	?>
 	<tr>
-		<td><?php echo $no++; ?></td>
-		<td><?php echo $d['nama']; ?></td>
-    <td><?php echo $d['fasilitas_rusak']; ?></td>
-    <td><?php echo $d['alamat']; ?></td>
+      <td><?php echo $no++; ?></td>
+      <td><?php echo $d['nama']; ?></td>
+      <td><?php echo $d['tgl_lapor']; ?></td>
+      <td><?php echo $d['fasilitas']; ?></td>
+      <td><?php echo $d['pilihan_tempat']; ?></td>
+      <td><?php echo $d['fasilitas_rusak']; ?></td>
+      <td><?php echo $d['alamat']; ?></td>
+      <td><img src="file/<?= $d['foto'] ?>" alt="" class="" style="width: 300px;"></td>
+      <td><?php echo $d['keterangan']; ?></td>
+      <td><?php echo $d['status_laporan']; ?></td>
 	</tr>
 	<?php } ?>
+
+          </div>
+    
+        </div>
+
 
 
     </section><!-- /Starter Section Section -->

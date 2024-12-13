@@ -216,6 +216,7 @@
 
                   <button type="submit">Laporkan</button>
                 </div>
+                <div class="error-message"></div>
 
               </div>
             </form>
